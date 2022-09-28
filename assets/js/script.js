@@ -12,6 +12,19 @@ const revealNumber = function (event) {
     const number = target.dataset.number;
     const state = target.dataset.state;
     console.log(number, state);
+
+    // check if hidden
+    if (state === "hidden") {
+      // set text to reveal number
+      target.textContent = number;
+      // toggle the state data attribute to visible
+      target.dataset.state = "visible";
+    } else {
+      // set text to empty
+      target.textContent = "";
+      // toggle the state data attribute to hidden
+      target.dataset.state = "hidden";
+    }
   }
 };
 
